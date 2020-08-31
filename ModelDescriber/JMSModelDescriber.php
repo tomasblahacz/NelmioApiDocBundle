@@ -213,6 +213,10 @@ class JMSModelDescriber implements ModelDescriberInterface, ModelRegistryAwareIn
         } elseif ($type['name'] === 'uuid') {
             $property->setType('string');
             $property->setExample('687150bf-e8dc-4038-bb30-197bd8019fb4');
+        } elseif ($type['name'] === 'Decimal') {
+            $property->setType('number');
+            $property->setExample(20.90);
+            $property->setFormat('float');
         } elseif (in_array($type['name'], ['bool', 'boolean'], true)) {
             $property->setType('boolean');
         } elseif (in_array($type['name'], ['int', 'integer'], true)) {
